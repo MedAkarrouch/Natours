@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const compression = require('compression');
 const cors = require('cors');
 const hpp = require('hpp');
@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(cors());
 app.options('*', cors());
 // Set security HTTP headers
-// app.use(helmet());
+app.use(helmet());
 // Development logging
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
