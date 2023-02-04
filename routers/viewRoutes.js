@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const viewsController = require('./../controllers/viewsController');
 const authController = require('./../controllers/authController');
-const { createBookingCheckout } = require('../controllers/bookingController');
+// const { createBookingCheckout } = require('../controllers/bookingController');
 
 router.get('/me', authController.protect, viewsController.getAccount);
 
@@ -14,7 +14,7 @@ router.get(
 
 router.get(
   '/',
-  createBookingCheckout,
+  // createBookingCheckout,
   authController.isLoggedIn,
   viewsController.getOverview
 );
