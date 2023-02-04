@@ -10,7 +10,7 @@ html
     script(src='https://js.stripe.com/v3/' defer)
     script(src='/js/bundle.js' defer) 
     title=`Natours | ${title}`
-  body(data-alert=`${alert ? 'alert' : ''}`)
+  body(data-alert=`${alert ? alert : ''}`)
     // HEADER
     include _header
     // CONTENT
