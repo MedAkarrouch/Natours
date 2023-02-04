@@ -16,7 +16,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     mode: 'payment',
-    success_url: `${req.protocol}://${req.get('host')}/my-bookings`,
+    success_url: `${req.protocol}://${req.get(
+      'host'
+    )}/my-bookings?alert=booking`,
     // success_url: `${req.protocol}://${req.get('host')}/?user=${
     //   req.user.id
     // }&tour=${req.params.tourId}&price=${tour.price}`,

@@ -4,6 +4,7 @@ import signup from './signup';
 import logout from './logout';
 import { bookTour } from './stripe';
 import updateSettings from './updateSettings';
+import { showAlert } from './alerts';
 // Variables
 const loginForm = document.querySelector('.form--login');
 const signupForm = document.querySelector('.form--signup');
@@ -57,4 +58,9 @@ if (bookTourBtn) {
     e.target.textContent = 'Processiong...';
     bookTour(e.target.dataset.tourId);
   });
+}
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alertMessage) {
+  showAlert('success', alertMessage, 20);
 }
